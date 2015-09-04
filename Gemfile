@@ -2,11 +2,9 @@ source "https://rubygems.org"
 
 ruby "2.2.3"
 
-gem "airbrake"
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
 gem "coffee-rails", "~> 4.1.0"
-gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
 gem "high_voltage"
