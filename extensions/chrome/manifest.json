@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "getknowledge",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://lms.mti.edu.ru/*"
+      ],
+      "js": ["jquery.min.js", "content.js"]
+    }
+  ]
+}
