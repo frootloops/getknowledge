@@ -23,6 +23,8 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+gem "devise"
+gem "activeadmin", github: "activeadmin"
 
 group :development do
   gem "spring"
