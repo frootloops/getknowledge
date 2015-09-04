@@ -5,7 +5,9 @@ namespace :import do
     raise ArgumentError unless page.css('b').count == page.css('i').count
 
     page.css('b').each_with_index do |question, i|
-      Question.create(course_id: 1, body: question.text, answer: page.css('i')[i].text)
+      body = question.text.strip
+      answer = page.css('i')[i].text.strip
+      Question.create(course_id: 1, body: body, answer: answer)
     end
 
   end
