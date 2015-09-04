@@ -25,6 +25,7 @@ gem "title"
 gem "uglifier"
 gem "devise"
 gem "activeadmin", github: "activeadmin"
+gem "nokogiri"
 
 group :development do
   gem "spring"
