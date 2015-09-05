@@ -2,7 +2,7 @@ class ApiController < ApplicationController
   def index
     question = Question.find_by(body: params[:q])
 
-    if question && question.answer
+    if question
       render text: question.answer
     else
       render status: :not_found, text: ""
@@ -10,7 +10,6 @@ class ApiController < ApplicationController
   end
 
   skip_before_filter :verify_authenticity_token
-
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
 
@@ -28,7 +27,7 @@ class ApiController < ApplicationController
       headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
       headers['Access-Control-Max-Age'] = '1728000'
 
-      render :text => '', :content_type => 'text/plain'
+      render text: '', content_type: 'text/plain'
     end
   end
 end
