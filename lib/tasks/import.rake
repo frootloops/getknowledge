@@ -12,3 +12,7 @@ namespace :import do
 
   end
 end
+
+# File.foreach("db/questions/file012.html").each_slice(2) do |lines|
+#   Question.create(course_id: 11, body: lines[0].strip, answer: lines[1].strip)
+# end
