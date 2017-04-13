@@ -3,7 +3,7 @@ class ApiController < ApplicationController
     # question = Question.find_by(body: params[:q])
     query = params[:q]
     if query.end_with? ":"
-      query = query.chomp
+      query = query.chomp(":")
     end
     questions = Question.where("body ILIKE ?", "%#{query}%")
 
