@@ -1,9 +1,10 @@
 class ApiController < ApplicationController
   def index
-    question = Question.find_by(body: params[:q])
+    # question = Question.find_by(body: params[:q])
+    questions = Question.where("body ILIKE ?", "%#{params[:q]}%")
 
-    if question
-      render text: question.answer
+    if questions.first
+      render text: questions.first.answer
     else
       render status: :not_found, text: ""
     end
