@@ -1,7 +1,11 @@
 class ApiController < ApplicationController
   def index
     # question = Question.find_by(body: params[:q])
-    questions = Question.where("body ILIKE ?", "%#{params[:q]}%")
+    query = params[:q]
+    if query.end_with? ":"
+      query = query.chomp
+    end
+    questions = Question.where("body ILIKE ?", "%#{query}%")
 
     if questions.first
       render text: questions.first.answer
